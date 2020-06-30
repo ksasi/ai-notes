@@ -1,4 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://ksasi.github.io/ai-notes/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ksasi.github.io/ai-notes/" rel="alternate" type="text/html" /><updated>2020-06-30T13:24:30-05:00</updated><id>https://ksasi.github.io/ai-notes/feed.xml</id><title type="html">fastpages</title><subtitle>An easy to use blogging platform with support for Jupyter Notebooks.</subtitle><entry><title type="html">Fastpages Notebook Blog Post</title><link href="https://ksasi.github.io/ai-notes/jupyter/2020/02/20/test.html" rel="alternate" type="text/html" title="Fastpages Notebook Blog Post" /><published>2020-02-20T00:00:00-06:00</published><updated>2020-02-20T00:00:00-06:00</updated><id>https://ksasi.github.io/ai-notes/jupyter/2020/02/20/test</id><content type="html" xml:base="https://ksasi.github.io/ai-notes/jupyter/2020/02/20/test.html">&lt;!--
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://ksasi.github.io/ai-notes/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ksasi.github.io/ai-notes/" rel="alternate" type="text/html" /><updated>2020-06-30T13:27:03-05:00</updated><id>https://ksasi.github.io/ai-notes/feed.xml</id><title type="html">fastpages</title><subtitle>An easy to use blogging platform with support for Jupyter Notebooks.</subtitle><entry><title type="html">Time Matters In Regularizing Deep Networks</title><link href="https://ksasi.github.io/ai-notes/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks.html" rel="alternate" type="text/html" title="Time Matters In Regularizing Deep Networks" /><published>2020-06-30T00:00:00-05:00</published><updated>2020-06-30T00:00:00-05:00</updated><id>https://ksasi.github.io/ai-notes/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks</id><content type="html" xml:base="https://ksasi.github.io/ai-notes/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks.html">&lt;p&gt;Title: Time Matters in Regularizing Deep Networks (NeuIPS 2019)
+Date: 2019-12-2
+Category: Paper Notes
+Tags: Deep Learning, Regularization, Data Augmentation, Weight Decay&lt;/p&gt;
+
+&lt;h4 style=&quot;text-align: center;&quot;&gt;
+  Time Matters in Regularizing Deep Networks:
+&lt;/h4&gt;
+&lt;h5 style=&quot;text-align: center;&quot;&gt;
+Weight Decay and Data Augmentation Affect Early Learning Dynamics, Matter Little Near Convergence
+&lt;/h5&gt;
+&lt;h5 style=&quot;text-align: center;&quot;&gt;&lt;i&gt;
+Aditya Golatkar, Alessandro Achille, Stefano Soatto
+&lt;/i&gt;&lt;/h5&gt;
+&lt;h6 style=&quot;text-align: center;&quot;&gt;&lt;u&gt;
+Paper Notes
+&lt;/u&gt;&lt;/h6&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Summary&lt;/strong&gt; : This paper discusses that there is a “critical period” for regularization which will affect the final performance of the neural network.This is empirically verified using ResNet-18, All-CNN networks with CIFAR-10 and CIFAR-100 datasets. Also different regularization methods such as weight decay &amp;amp;  data augmentation were utilised along with different learning rate schedules (exponential, piece-wise constant).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Findings&lt;/strong&gt; :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Applying weight decay and data augmentation beyound the initial critical period doesn’t improve generalizatin. The initial period at which these are applied decide on the performance at asymptotes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Applying weight decay and data augmentation during the final phases of the training doesn’t improve generalization. Infact, in certain cases this degrades performance.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Applying weight decay and data augmentation during short window is effective if only applied during the critical period of fews epochs.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;./images/Screenshot 2019-12-01 at 7.59.44 PM.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;./images/Screenshot 2019-12-01 at 8.00.34 PM.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;./images/Screenshot 2019-12-01 at 8.00.56 PM.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;./images/Screenshot 2019-12-01 at 8.01.11 PM.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Following can be inferred from the above figures (Figure 1 to Figure 4) obtained from the paper&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Critical periods for regularization are independent of the data distribution&lt;/li&gt;
+  &lt;li&gt;Critical periods for regularization are independent of Batch-Normalization&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Conclusion&lt;/strong&gt; :  The authors in the paper showed that the transient behaviour of DNN’s play important role in determining how much the networks generalize. They also determined emperically , there exists a “critical period” that matters the most for applying regularization. The results in this paper can be utilized to intelligently apply regularization during “critical periods” and turn off during other parts of the training. This can help with saving computation cost and also decrease overall training time.&lt;/p&gt;</content><author><name></name></author><summary type="html">Title: Time Matters in Regularizing Deep Networks (NeuIPS 2019) Date: 2019-12-2 Category: Paper Notes Tags: Deep Learning, Regularization, Data Augmentation, Weight Decay</summary></entry><entry><title type="html">Fastpages Notebook Blog Post</title><link href="https://ksasi.github.io/ai-notes/jupyter/2020/02/20/test.html" rel="alternate" type="text/html" title="Fastpages Notebook Blog Post" /><published>2020-02-20T00:00:00-06:00</published><updated>2020-02-20T00:00:00-06:00</updated><id>https://ksasi.github.io/ai-notes/jupyter/2020/02/20/test</id><content type="html" xml:base="https://ksasi.github.io/ai-notes/jupyter/2020/02/20/test.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
