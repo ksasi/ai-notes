@@ -4,7 +4,9 @@ title: About Me
 permalink: /about/
 ---
 
-This is where you put the contents of your *About* page. Like all your pages, it's in [Markdown](https://guides.github.com/features/mastering-markdown/) format.
+I am a software engineer with deep interest in Computer Programming, Artificial Intelligence, Machine Learning and Deep Learning.
+
+I am passionate about technology and its potential to solve variety of problems. This blog is a way for me to explain concepts which I have learnt along the way. Along with this I hope this blog also acts as a reference for me in future.
 
 This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
 
