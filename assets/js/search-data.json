@@ -40,7 +40,7 @@
   
       ,"page1": {
           "title": "About Me",
-          "content": "This is where you put the contents of your About page. Like all your pages, it’s in Markdown format. . This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
+          "content": "I am a software engineer with deep interest in Computer Programming, Artificial Intelligence, Machine Learning and Deep Learning. . I am passionate about technology and its potential to solve variety of problems. This blog is a way for me to explain concepts which I have learnt along the way. Along with this I hope this blog also acts as a reference for me in future. . This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
           "url": "https://ksasi.github.io/ai-notes/about/",
           "relUrl": "/about/",
           "date": ""
