@@ -1,48 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://ksasi.github.io/ai-notes/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ksasi.github.io/ai-notes/" rel="alternate" type="text/html" /><updated>2020-08-24T12:40:01-05:00</updated><id>https://ksasi.github.io/ai-notes/feed.xml</id><title type="html">Sasikanth Kotti</title><subtitle>Notes for Artificial Intelligence, Machine Learning and Deep Learning</subtitle><entry><title type="html">Self Supervised Learning</title><link href="https://ksasi.github.io/ai-notes/2020/08/24/Self-Supervised-Learning.html" rel="alternate" type="text/html" title="Self Supervised Learning" /><published>2020-08-24T00:00:00-05:00</published><updated>2020-08-24T00:00:00-05:00</updated><id>https://ksasi.github.io/ai-notes/2020/08/24/Self-Supervised-Learning</id><content type="html" xml:base="https://ksasi.github.io/ai-notes/2020/08/24/Self-Supervised-Learning.html">&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---
-title: Introduction to Self-Supervised Learning
-description: &quot;Basics of Self-Supervised Learning&quot;
-layout: post
-toc: true
-comments: true
-hide: false
-search_exclude: false
-categories: [self-supervised learning, unsupervised learning]
----
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;In general , if we observe the way humans learn it is evident that they don’t need huge number of training data with explicit labels. Most of the learning is done hugely via Unsupervised fashion i.e. without labels. Hence it is more natural to explore if Unsupervised learning can be used to improve the efficiency of learning algorithms. Technically this means that can Unsupervised learning be used to improve or learn more representations from unlabelled data.&lt;/p&gt;
-
-&lt;p&gt;But before we dive into self-supervised learning lets understand what is Supervised learning and Unsupervised learning.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;u&gt;Supervised learning&lt;/u&gt;&lt;/strong&gt; : This refers to the process of training learning algorithms where an inhererent supervision is available in the data. Futher this can be defined as using labels available in the data to train learning algorithms. Classification is a common example for Supervised Learning.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;u&gt;Unsupervised learning&lt;/u&gt;&lt;/strong&gt; : In Unsupervised learning, there are no labels available in the data . Instead the data with features is just used by the algorithm to learn inherent structure. Clustering is an example of the algorithm that uses Unsupervised Learning.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;u&gt;Self-Supervised Learning&lt;/u&gt;&lt;/strong&gt; : This can be thought of a subset of Unsupervised learning where in own supervision is created via pretext tasks or proxy loss. The idea and the hope is that the pretext task or proxy loss helps to learn better representations thus improving the accuracy of the learning algorithms. Further to this , it is also believed that this helps the learning algorithms generalize better.&lt;/p&gt;
-
-&lt;p&gt;Below are the advantages of using self-supervised learning:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Availability of huge amount of unlabelled data for training&lt;/li&gt;
-  &lt;li&gt;Label once and utilize for a variety of different tasks&lt;/li&gt;
-  &lt;li&gt;Emulate the natural way in which humans/animals learn&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In the next blog post, we will look at some interesting literature along with concepts that help us dive deep into self-supervised learning.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;References&lt;/strong&gt; :&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;https://youtu.be/dMUes74-nYY&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;https://sites.google.com/view/berkeley-cs294-158-sp20/home&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;“Lecture 7 Self-Supervised Learning” of CS294-158-SP20 course&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">--- title: Introduction to Self-Supervised Learning description: &quot;Basics of Self-Supervised Learning&quot; layout: post toc: true comments: true hide: false search_exclude: false categories: [self-supervised learning, unsupervised learning] ---</summary></entry><entry><title type="html">Time Matters In Regularizing Deep Networks</title><link href="https://ksasi.github.io/ai-notes/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks.html" rel="alternate" type="text/html" title="Time Matters In Regularizing Deep Networks" /><published>2020-06-30T00:00:00-05:00</published><updated>2020-06-30T00:00:00-05:00</updated><id>https://ksasi.github.io/ai-notes/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks</id><content type="html" xml:base="https://ksasi.github.io/ai-notes/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks.html">&lt;p&gt;Title: Time Matters in Regularizing Deep Networks (NeuIPS 2019)
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://ksasi.github.io/ai-notes/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ksasi.github.io/ai-notes/" rel="alternate" type="text/html" /><updated>2020-08-24T12:40:46-05:00</updated><id>https://ksasi.github.io/ai-notes/feed.xml</id><title type="html">Sasikanth Kotti</title><subtitle>Notes for Artificial Intelligence, Machine Learning and Deep Learning</subtitle><entry><title type="html">Time Matters In Regularizing Deep Networks</title><link href="https://ksasi.github.io/ai-notes/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks.html" rel="alternate" type="text/html" title="Time Matters In Regularizing Deep Networks" /><published>2020-06-30T00:00:00-05:00</published><updated>2020-06-30T00:00:00-05:00</updated><id>https://ksasi.github.io/ai-notes/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks</id><content type="html" xml:base="https://ksasi.github.io/ai-notes/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks.html">&lt;p&gt;Title: Time Matters in Regularizing Deep Networks (NeuIPS 2019)
 Date: 2019-12-2
 Category: Paper Notes
 Tags: Deep Learning, Regularization, Data Augmentation, Weight Decay&lt;/p&gt;
