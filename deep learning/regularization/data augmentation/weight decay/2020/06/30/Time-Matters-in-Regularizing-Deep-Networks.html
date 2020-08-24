@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Time Matters in Regularizing Deep Networks (NeuIPS 2019) | Sasikanth Kotti</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Time Matters in Regularizing Deep Networks (NeuIPS 2019)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Time Matters in Regularizing Deep Networks" />
+<meta property="og:description" content="Time Matters in Regularizing Deep Networks" />
+<link rel="canonical" href="https://ksasi.github.io/ai-notes/deep%20learning/regularization/data%20augmentation/weight%20decay/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks.html" />
+<meta property="og:url" content="https://ksasi.github.io/ai-notes/deep%20learning/regularization/data%20augmentation/weight%20decay/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks.html" />
+<meta property="og:site_name" content="Sasikanth Kotti" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-30T00:00:00-05:00" />
+<script type="application/ld+json">
+{"headline":"Time Matters in Regularizing Deep Networks (NeuIPS 2019)","description":"Time Matters in Regularizing Deep Networks","datePublished":"2020-06-30T00:00:00-05:00","dateModified":"2020-06-30T00:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://ksasi.github.io/ai-notes/deep%20learning/regularization/data%20augmentation/weight%20decay/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks.html"},"url":"https://ksasi.github.io/ai-notes/deep%20learning/regularization/data%20augmentation/weight%20decay/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ai-notes/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ksasi.github.io/ai-notes/feed.xml" title="Sasikanth Kotti" /><link rel="shortcut icon" type="image/x-icon" href="/ai-notes/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Time Matters in Regularizing Deep Networks (NeuIPS 2019) | Sasikanth Kotti</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Time Matters in Regularizing Deep Networks (NeuIPS 2019)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Time Matters in Regularizing Deep Networks" />
+<meta property="og:description" content="Time Matters in Regularizing Deep Networks" />
+<link rel="canonical" href="https://ksasi.github.io/ai-notes/deep%20learning/regularization/data%20augmentation/weight%20decay/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks.html" />
+<meta property="og:url" content="https://ksasi.github.io/ai-notes/deep%20learning/regularization/data%20augmentation/weight%20decay/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks.html" />
+<meta property="og:site_name" content="Sasikanth Kotti" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-30T00:00:00-05:00" />
+<script type="application/ld+json">
+{"headline":"Time Matters in Regularizing Deep Networks (NeuIPS 2019)","description":"Time Matters in Regularizing Deep Networks","datePublished":"2020-06-30T00:00:00-05:00","dateModified":"2020-06-30T00:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://ksasi.github.io/ai-notes/deep%20learning/regularization/data%20augmentation/weight%20decay/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks.html"},"url":"https://ksasi.github.io/ai-notes/deep%20learning/regularization/data%20augmentation/weight%20decay/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://ksasi.github.io/ai-notes/feed.xml" title="Sasikanth Kotti" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ai-notes/">Sasikanth Kotti</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ai-notes/about/">About Me</a><a class="page-link" href="/ai-notes/search/">Search</a><a class="page-link" href="/ai-notes/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Time Matters in Regularizing Deep Networks (NeuIPS 2019)</h1><p class="page-description">Time Matters in Regularizing Deep Networks</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-06-30T00:00:00-05:00" itemprop="datePublished">
+        Jun 30, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/ai-notes/categories/#Deep Learning">Deep Learning</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ai-notes/categories/#Regularization">Regularization</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ai-notes/categories/#Data Augmentation">Data Augmentation</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/ai-notes/categories/#Weight Decay">Weight Decay</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h4"><a href="#--time-matters-in-regularizing-deep-networks">
+  Time Matters in Regularizing Deep Networks:
+</a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#weight-decay-and-data-augmentation-affect-early-learning-dynamics-matter-little-near-convergence">
+Weight Decay and Data Augmentation Affect Early Learning Dynamics, Matter Little Near Convergence
+</a></li>
+<li class="toc-entry toc-h5"><a href="#aditya-golatkar-alessandro-achille-stefano-soatto">
+Aditya Golatkar, Alessandro Achille, Stefano Soatto
+</a>
+<ul>
+<li class="toc-entry toc-h6"><a href="#paper-notes">
+Paper Notes
+</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h4 style="text-align: center;">
+<a class="anchor" href="#--time-matters-in-regularizing-deep-networks" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+  Time Matters in Regularizing Deep Networks:
+</h4>
+<h5 style="text-align: center;">
+<a class="anchor" href="#weight-decay-and-data-augmentation-affect-early-learning-dynamics-matter-little-near-convergence" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+Weight Decay and Data Augmentation Affect Early Learning Dynamics, Matter Little Near Convergence
+</h5>
+<h5 style="text-align: center;">
+<a class="anchor" href="#aditya-golatkar-alessandro-achille-stefano-soatto" aria-hidden="true"><span class="octicon octicon-link"></span></a><i>
+Aditya Golatkar, Alessandro Achille, Stefano Soatto
+</i>
+</h5>
+<h6 style="text-align: center;">
+<a class="anchor" href="#paper-notes" aria-hidden="true"><span class="octicon octicon-link"></span></a><u>
+Paper Notes
+</u>
+</h6>
+
+<hr>
+
+<p><strong>Summary</strong> : This paper discusses that there is a “critical period” for regularization which will affect the final performance of the neural network.This is empirically verified using ResNet-18, All-CNN networks with CIFAR-10 and CIFAR-100 datasets. Also different regularization methods such as weight decay &amp;  data augmentation were utilised along with different learning rate schedules (exponential, piece-wise constant).</p>
+
+<p><strong>Findings</strong> :</p>
+
+<ul>
+  <li>
+    <p>Applying weight decay and data augmentation beyound the initial critical period doesn’t improve generalizatin. The initial period at which these are applied decide on the performance at asymptotes.</p>
+  </li>
+  <li>
+    <p>Applying weight decay and data augmentation during the final phases of the training doesn’t improve generalization. Infact, in certain cases this degrades performance.</p>
+  </li>
+  <li>
+    <p>Applying weight decay and data augmentation during short window is effective if only applied during the critical period of fews epochs.</p>
+  </li>
+</ul>
+
+<p><img src="./images/Screenshot%202019-12-01%20at%207.59.44%20PM.png"></p>
+
+<p><img src="./images/Screenshot%202019-12-01%20at%208.00.34%20PM.png"></p>
+
+<p><img src="./images/Screenshot%202019-12-01%20at%208.00.56%20PM.png"></p>
+
+<p><img src="./images/Screenshot%202019-12-01%20at%208.01.11%20PM.png"></p>
+
+<p>Following can be inferred from the above figures (Figure 1 to Figure 4) obtained from the paper</p>
+
+<ul>
+  <li>Critical periods for regularization are independent of the data distribution</li>
+  <li>Critical periods for regularization are independent of Batch-Normalization</li>
+</ul>
+
+<p><strong>Conclusion</strong> :  The authors in the paper showed that the transient behaviour of DNN’s play important role in determining how much the networks generalize. They also determined emperically , there exists a “critical period” that matters the most for applying regularization. The results in this paper can be utilized to intelligently apply regularization during “critical periods” and turn off during other parts of the training. This can help with saving computation cost and also decrease overall training time.</p>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="ksasi/ai-notes"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/ai-notes/deep%20learning/regularization/data%20augmentation/weight%20decay/2020/06/30/Time-Matters-in-Regularizing-Deep-Networks.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ai-notes/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/ai-notes/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/ai-notes/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Notes for Artificial Intelligence, Machine Learning and Deep Learning</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/ksasi" title="ksasi"><svg class="svg-icon grey"><use xlink:href="/ai-notes/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/kotti_sasikanth" title="kotti_sasikanth"><svg class="svg-icon grey"><use xlink:href="/ai-notes/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
