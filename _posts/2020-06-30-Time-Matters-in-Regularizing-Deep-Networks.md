@@ -4,7 +4,7 @@ description: "Time Matters in Regularizing Deep Networks"
 layout: post
 toc: true
 comments: true
-hide: false
+hide: true
 search_exclude: false
 categories: [Deep Learning, Regularization, Data Augmentation, Weight Decay]
 ---
