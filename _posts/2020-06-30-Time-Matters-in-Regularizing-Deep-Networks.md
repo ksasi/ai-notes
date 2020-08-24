@@ -1,7 +1,13 @@
-Title: Time Matters in Regularizing Deep Networks (NeuIPS 2019)
-Date: 2019-12-2
-Category: Paper Notes
-Tags: Deep Learning, Regularization, Data Augmentation, Weight Decay
+---
+title: Time Matters in Regularizing Deep Networks (NeuIPS 2019)
+description: "Time Matters in Regularizing Deep Networks"
+layout: post
+toc: true
+comments: true
+hide: false
+search_exclude: false
+categories: [Deep Learning, Regularization, Data Augmentation, Weight Decay]
+---
 
 <h4 style="text-align: center;" markdown="1">
   Time Matters in Regularizing Deep Networks:
