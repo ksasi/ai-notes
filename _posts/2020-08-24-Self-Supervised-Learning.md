@@ -1,12 +1,12 @@
 ---
+title: Introduction to Self-Supervised Learning
+description: "Basics of Self-Supervised Learning"
 layout: post
 toc: true
 comments: true
 hide: false
 search_exclude: false
 categories: [self-supervised learning, unsupervised learning]
-title: Introduction to Self-Supervised Learning
-description: "Basics of Self-Supervised Learning"
 ---
 
 
