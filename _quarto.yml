@@ -1,0 +1,19 @@
+project:
+  type: website
+
+website:
+  title: "Sasikanth Kotti"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/ksasi/
+      - icon: twitter
+        href: https://twitter.com/kotti_sasikanth
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+
+
+
